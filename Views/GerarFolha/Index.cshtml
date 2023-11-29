@@ -1,0 +1,53 @@
+﻿@model ExibirFolhaDescontoViewModel
+
+<div class="folha-pagamento">
+    <center><h1>Folha de pagamento</h1></center>
+
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Quantidade de horas</th>
+                    <th>Horas extras</th>
+                    <th>Salário base</th>
+                    <th>Salário líquido</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var folha in Model.Folhas)
+                {
+                    <tr>
+                        <h1>@folha.NomeFuncionario</h1>
+                        <td>@folha.QtdHora</td>
+                        <td>@folha.HoraExtra</td>
+                        <td>@folha.SalarioBase</td>
+                        <td>@folha.SalarioLiquido</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-container">
+        <h2>Descontos</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>INSS</th>
+                    <th>FGTS</th>
+                    <th>IRRF</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var desconto in Model.Descontos)
+                {
+                    <tr>
+                        <td>@desconto.INSS</td>
+                        <td>@desconto.FGTS</td>
+                        <td>@desconto.IRRF</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

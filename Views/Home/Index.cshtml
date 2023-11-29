@@ -1,0 +1,11 @@
+﻿@model List<ExibirFolha>
+
+<h2>Resultados da Folha</h2>
+
+<form method="post" action="@Url.Action("Index", "GerarFolha")">
+    <label for="data">Data:</label>
+    <input type="text" id="data" name="data" placeholder="Insira a data" required>
+    <button type="submit">Consultar</button>
+</form>
+
+<!-- Adicione aqui a exibição dos resultados, se necessário -->
